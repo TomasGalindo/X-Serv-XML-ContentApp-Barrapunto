@@ -44,12 +44,12 @@ class myContentHandler(ContentHandler):
             self.inItem = False
         elif self.inItem:
             if name == 'title':
-                self.texto += ("<div><p>Title: " + self.theContent + ".</p>")
+                self.texto += ("<p>Title: " + self.theContent + ".</p>")
                 # To avoid Unicode trouble
                 self.inContent = False
                 self.theContent = ""
             elif name == 'link':
-                self.texto += ("<p>Link: " + "<a href=" + self.theContent + ">" + self.theContent + "</a></p></div>")
+                self.texto += ("<p>Link: " + "<a href=" + self.theContent + ">" + self.theContent + "</a></p>")
                 self.inContent = False
                 self.theContent = ""
 
