@@ -14,6 +14,7 @@ webApp class
  October 2009 - February 2015
 """
 
+
 class webApp:
     """Root of a hierarchy of classes implementing web applications
 
@@ -55,8 +56,8 @@ class webApp:
             parsedRequest = self.parse(request)
             (returnCode, htmlAnswer) = self.process(parsedRequest)
             print('Answering back...')
-            recvSocket.send(bytes("HTTP/1.1 " + returnCode + " \r\n\r\n"
-                            + htmlAnswer + "\r\n", 'utf-8'))
+            recvSocket.send(bytes("HTTP/1.1 " + returnCode + " \r\n\r\n" +
+                            htmlAnswer + "\r\n", 'utf-8'))
             recvSocket.close()
 
 if __name__ == "__main__":
