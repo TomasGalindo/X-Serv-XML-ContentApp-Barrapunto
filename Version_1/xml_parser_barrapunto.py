@@ -23,7 +23,8 @@ import urllib.request
 # en un fichero
 
 class myContentHandler(ContentHandler):
-    texto= ""
+    texto = ""
+    
     def __init__(self):
         self.texto += "<html><body>"
         self.inItem = False
@@ -49,7 +50,8 @@ class myContentHandler(ContentHandler):
                 self.inContent = False
                 self.theContent = ""
             elif name == 'link':
-                self.texto += ("<p>Link: " + "<a href=" + self.theContent + ">" + self.theContent + "</a></p>")
+                self.texto += ("<p>Link: " + "<a href=" + self.theContent + 
+                               ">" + self.theContent + "</a></p>")
                 self.inContent = False
                 self.theContent = ""
 
